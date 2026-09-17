@@ -141,3 +141,28 @@ let sprPlayer = sprites.create(img`
 sprPlayer.setPosition(77, 105)
 controller.moveSprite(sprPlayer, 50, 0)
 sprPlayer.setStayInScreen(true)
+let sprBanana = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . 7 . . 
+    . . . . . . . . . . . . . 7 . . 
+    . . . . . . . . . . . . 5 5 . . 
+    . . . . . . . . . . . . 5 5 . . 
+    . . . . . . . . . . . 5 5 5 . . 
+    . . . . . . . . . . . 5 5 5 . . 
+    . . . . . . . . . . . 5 5 4 . . 
+    . . . . . . . . . . 5 5 4 . . . 
+    . . . . . . . . . 5 5 5 4 . . . 
+    . . . . . . . . 5 5 5 5 4 . . . 
+    . . . . . 5 5 5 5 4 4 4 . . . . 
+    . . . . . 4 4 4 4 . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Food)
+sprBanana.setPosition(69, 2)
+sprBanana.setVelocity(0, 50)
+game.onUpdate(function () {
+    if (sprBanana.y > 120) {
+        sprBanana.y = 0
+    }
+})
